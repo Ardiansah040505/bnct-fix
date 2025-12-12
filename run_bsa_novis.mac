@@ -1,0 +1,6 @@
+# run_bsa_novis.mac -- batch run without visualization
+/control/verbose 0
+/run/initialize
+/run/printProgress 1000
+/random/setSeeds 12345 67890
+/run/beamOn 10000

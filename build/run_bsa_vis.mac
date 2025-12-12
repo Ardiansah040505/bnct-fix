@@ -1,0 +1,16 @@
+# run_bsa_vis.mac -- set thickness, init, open visual, draw
+# Set shield thickness to 80 cm (example)
+ /B3/detector/setShieldThickness 80 cm
+
+# initialize geometry & physics
+ /run/initialize
+
+# visualization commands (OpenGL - depends on Geant4 build)
+ /vis/open OGL 800x600-0+0
+ /vis/viewer/set/background 1 1 1
+ /vis/drawVolume
+ /vis/scene/add/axes 0 0 0 1 m
+ /vis/scene/endOfEventAction accumulate
+
+# run a small number of events to inspect
+ /run/beamOn 1000
